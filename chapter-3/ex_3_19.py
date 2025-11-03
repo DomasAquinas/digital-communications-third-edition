@@ -65,5 +65,26 @@ for cycle_idx, output in enumerate(actual_outputs):
     print(f"Cycle {cycle_idx}: {output}")
 print()
 isi_contributors = np.delete(actual_outputs, (8), 0)
-print(f"Largest magnitude contributing to ISI: {np.max(isi_contributors)}")
-print(f"Sum of magnitudes contributing to ISI: {np.sum(isi_contributors)}")
+print(f"Largest magnitude contributing to ISI: "
+      f"{np.max(np.abs(isi_contributors))}")
+print(f"Sum of magnitudes contributing to ISI: "
+      f"{np.sum(np.abs(isi_contributors))}")
+print()
+
+
+# # Checking the zero-forcing filter taps (I did this part on paper)
+
+# signal_matrix_small = np.array([
+#     [1.00, 0.10, 0.03],
+#     [0.20, 1.00, 0.10],
+#     [0.10, 0.20, 1.00]
+# ])
+
+# zero_forced_output = np.array([0.0, 1.0, 0.0])
+
+# zero_forcing_taps = np.matmul(
+#     np.linalg.inv(signal_matrix_small),
+#     zero_forced_output
+# )
+
+# print(zero_forcing_taps)
