@@ -2,6 +2,9 @@
 Exercise 3.19
 
 Design of a nine-tap transversal minimum MSE equalizing filter
+
+NOTE: I am not correcting values printed in the textbook. There may be missing
+      minus signs.
 """
 
 import numpy as np
